@@ -16,11 +16,11 @@ cargo install flip-link
 
 Compile the firmware for the left half with
 ```shell
-cargo objcopy --release -- -O binary keyberon.bin
+cargo objcopy --release -- -O binary keyberon-left.bin
 ```
 and for the right half with
 ```shell
-cargo objcopy --features right_half --release -- -O binary keyberon.bin
+cargo objcopy --features right_half --release -- -O binary keyberon-right.bin
 ```
 
 

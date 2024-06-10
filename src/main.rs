@@ -64,7 +64,7 @@ mod app {
         usb_dev: UsbDevice,
         usb_class: UsbClass,
         #[lock_free]
-        layout: Layout<12, 4, 5, ()>,
+        layout: Layout<12, 4, 4, ()>,
     }
 
     // local resources (between tasks)
