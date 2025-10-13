@@ -64,12 +64,28 @@ const TAB_CTRL: Action = HoldTap(&HoldTapAction {
 
 // Level 0 - hold and tap
 
-const Y_SH: Action = HoldTap(&HoldTapAction {
+const Z_SH: Action = HoldTap(&HoldTapAction {
     timeout: TIMEOUT,
     tap_hold_interval: 200,
     config: HoldTapConfig::Default,
     hold: k(LShift),
     tap: k(Z),
+});
+
+const S_GUI: Action = HoldTap(&HoldTapAction {
+    timeout: TIMEOUT,
+    tap_hold_interval: 200,
+    config: HoldTapConfig::Default,
+    hold: k(LGui),
+    tap: k(S),
+});
+
+const L_GUI: Action = HoldTap(&HoldTapAction {
+    timeout: TIMEOUT,
+    tap_hold_interval: 200,
+    config: HoldTapConfig::Default,
+    hold: k(LGui),
+    tap: k(L),
 });
 
 const MINUS_SH: Action = HoldTap(&HoldTapAction {
@@ -110,8 +126,8 @@ const HOME_SH: Action = HoldTap(&HoldTapAction {
 pub static LAYERS: keyberon::layout::Layers<12, 4, 4, ()> = keyberon::layout::layout! {
     {
         [ n Q      W       E       R       T     Y   U       I       O       P          n ]
-        [ n {A_SH} S       D       F       G     H   J       K       L       {OE_SH}    n ]
-        [ n {Y_SH} X       C       V       B     N   M       ,       .       {MINUS_SH} n ]
+        [ n {A_SH} {S_GUI} D       F       G     H   J       K       {L_GUI} {OE_SH}    n ]
+        [ n {Z_SH} X       C       V       B     N   M       ,       .       {MINUS_SH} n ]
         [        n n n {ESC_CTRL} {ENTER_ALT}  (2)   (1) {SPACE_ALT} {TAB_CTRL}  n n n    ]
     }{
         [ t {a!(E)}     {s!(Grave)} {a!(Kb8)}         {a!(Kb9)}      Grave          {s!(Kb1)}   NonUsBslash {s!(NonUsBslash)} {s!(Kb0)}       {s!(Kb6)}   t ],
